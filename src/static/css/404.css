@@ -43,9 +43,9 @@ nav ul li a {
 }
 
 .not-found-page-container p a {
-   color: #ff960b;
-   text-decoration: none;
-   font-weight: bold;
+    color: #ff960b;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .not-found-page-container p a:hover {
@@ -64,7 +64,7 @@ h2 {
     margin-top: 1%;
 }
 
-.not-found-page-container > p {
+.not-found-page-container>p {
     margin-top: 2%;
 }
 

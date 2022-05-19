@@ -93,6 +93,15 @@ form input {
     background-color: whitesmoke;
 }
 
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 form textarea {
     width: 320px;
     height: 80px;
@@ -102,6 +111,7 @@ form textarea {
     border-radius: 8px;
     outline: none;
     background-color: whitesmoke;
+    resize: none;
 }
 
 select {
