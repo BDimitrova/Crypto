@@ -87,12 +87,15 @@ main {
 
 .coin {
     display: inline-block;
-    width: 380px;
+    width: 400px;
     height: auto;
-    margin: 40px;
+    margin-top: 30px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-right: 10px;
     border: 2px solid rgba(169, 152, 198, 0.781);
     border-radius: 30px;
-    background-color: rgba(71, 20, 158, 0.111);
+    background-color: rgba(41, 11, 93, 0.633);
 }
 
 .coin-img img {
@@ -104,15 +107,22 @@ main {
 }
 
 .coin-info {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    
 }
 
 .coin-info h1 {
+    font-size: 24px;
     margin-top: 10px;
 }
 
 .coin-info p {
-    margin-top: 10px;
+    margin-top: 5px;
+}
+
+.coin-info span {
+    color: #f8ab46;
+    font-weight: bolder;
 }
 
 .coin .btn-details {
@@ -129,9 +139,10 @@ main {
     -webkit-transition: box-shadow 0.25s;
     transition: box-shadow 0.25s;
     color: white;
-    width: 150px;
+    width: 100px;
     margin-bottom: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
+    text-decoration: none;
 }
 
 .coin .btn-details:hover {
