@@ -55,27 +55,29 @@ main {
 
 .search-form {
     display: inline;
-    float: center;
     width: 500px;
     height: 40px;
-    margin: auto;
     background: #444;
     background: rgba(0, 0, 0, .2);
     border-radius: 3px;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.20),
-    
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.20);
+    margin-left: 5%;
+    margin-top: 100%;
 }
 
 .search-form input,
 select {
-    width: 370px;
-    padding: 10px 5px;
+    width: 470px;
     color: #ccc;
-    border: 0;
     background: transparent;
     border-radius: 3px 0 0 3px;
     height: 40px;
     border: 1px solid #fff;
+}
+
+.search-form option{
+    background: rgba(9, 9, 95, 0.652);
+    color: white;
 }
 
 .search-form button {
