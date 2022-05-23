@@ -50,7 +50,7 @@ main {
 .register-box {
     color: white;
     width: 360px;
-    height: 450px;
+    height: 500px;
     margin: auto;
     background-color: rgba(70, 20, 158, 0.304);
     border: 2px solid white;
@@ -92,7 +92,7 @@ form input {
 input[type="submit"] {
     width: 320px;
     height: 35px;
-    margin-top: 20px;
+    margin-top: 30px;
     border: none;
     background-color: #49c1a2;
     color: white;
