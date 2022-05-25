@@ -2,15 +2,15 @@
     <div class="register-box">
         <h1>Register</h1>
         <h4>It's free and only take a minute</h4>
-        <form>
+        <form action="/auth/register" method="POST">
             <label>Username</label>
-            <input type="text" placeholder="Username..">
+            <input type="text" placeholder="Username.." name="username">
             <label>Email</label>
-            <input type="text" placeholder="Email..">
+            <input type="text" placeholder="Email.." name="email">
             <label>Password</label>
-            <input type="password" placeholder="Password..">
+            <input type="password" placeholder="Password.." name="password">
             <label>Confirm Password</label>
-            <input type="password" placeholder="Confirm Password..">
+            <input type="password" placeholder="Confirm Password.." name="confirmPass">
             <input type="submit" value="Submit">
         </form>
         <p>Already have an account? <a href="/auth/login">Login here</a></p>

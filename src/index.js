@@ -7,7 +7,6 @@ const initDatabase = require('./config/mongooseConfig');
 
 const app = express();
 
-
 require('./config/hbsConfig')(app);
 require('./config/expressConfig')(app);
 
