@@ -2,6 +2,6 @@ const User = require('../models/User');
 
 exports.register = (userData) => User.create(userData);
 
-exports.login = (username, password) => {
-
+exports.login = (email, password) => {
+    let email = User.findOne({ email })
 }
