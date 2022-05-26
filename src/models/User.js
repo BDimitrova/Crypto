@@ -29,7 +29,7 @@ userSchema.pre('save', function (next) {
     });
 });
 
-userSchema.method('validatePassword', function (password) {
+userSchema.method('validatePassword', function(password) {
     return bcrypt.compare(password, this.password);
 });
 

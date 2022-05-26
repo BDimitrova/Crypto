@@ -1,7 +1,7 @@
 const jwt = require('../utils/jwt');
 
 const User = require('../models/User');
-const { TOKEN_SECRET } = require('../constants');
+const { JWT_Secret } = require('../constants');
 
 exports.register = (userData) => User.create(userData);
 
@@ -12,7 +12,7 @@ exports.login = async (email, password) => {
         throw new Error('Invalid email or password');
     };
 
-    let isValid = await User.validatePassword(password);
+    let isValid = await user.validatePassword(password);
 
     if (!isValid) {
         throw new Error('Invalid email or password');
@@ -20,9 +20,10 @@ exports.login = async (email, password) => {
 
     let payload = {
         _id: user._id, 
-        name: user.name,
         email: user.email
     }
 
-    let token = jwt.sign(payload, TOKEN_SECRET);
+    let token = await jwt.sign(payload, JWT_Secret);
+
+    return token
 }

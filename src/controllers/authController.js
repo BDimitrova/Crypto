@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const authServices = require('../services/authServices');
 
+const { AUTH_COOKIE_NAME } = require('../constants');
+
 router.get('/login', (req, res) => {
     res.render('auth/login');
 });
@@ -11,8 +13,12 @@ router.post('/login', (req, res) => {
     try {
         let token = authServices.login({ email, password })
         //TODO: Set token in httpOnly cookie
+        res.cookie(AUTH_COOKIE_NAME);
+        res.redirect('/');
     } catch (err) {
-
+        //TODO: Return proper notification message
+        console.log(err);
+        res.end();
     }
 
 })
@@ -39,7 +45,7 @@ router.post('/register', (req, res) => {
     } catch (err) {
         //TODO retrun error
     }
-    
+
 })
 
 module.exports = router;
