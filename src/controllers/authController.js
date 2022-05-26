@@ -9,8 +9,8 @@ router.post('/login', (req, res) => {
     const { email, password } = req.body;
 
     try {
-        authServices.login({ email, password })
-
+        let token = authServices.login({ email, password })
+        //TODO: Set token in httpOnly cookie
     } catch (err) {
 
     }

@@ -26,8 +26,12 @@ userSchema.pre('save', function (next) {
 
         this.password = hash;
         next();
-    })
-})
+    });
+});
+
+userSchema.method('validatePassword', function (password) {
+    return bcrypt.compare(password, this.password);
+});
 
 const User = mongoose.model('User', userSchema);
 
