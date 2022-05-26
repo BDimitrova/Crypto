@@ -12,8 +12,9 @@ router.post('/login', (req, res) => {
 
     try {
         let token = authServices.login({ email, password })
-        //TODO: Set token in httpOnly cookie
-        res.cookie(AUTH_COOKIE_NAME);
+
+        res.cookie(AUTH_COOKIE_NAME, token);
+
         res.redirect('/');
     } catch (err) {
         //TODO: Return proper notification message
