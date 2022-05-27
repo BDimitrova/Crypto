@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page - Crypto Web</title>
+    <title>{{title}}</title>
     <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 
@@ -16,10 +16,10 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/all-crypto">All Crypto</a></li>
-                <li><a href="/search">Search</a></li>
 
                 {{#if user}}
                 <li><a href="/create-offer">Create Offer</a></li>
+                <li><a href="/search">Search</a></li>
                 <li><a href="#">Logout</a></li>
                 {{else}}
                 <li><a href="/auth/login">Login</a></li>

@@ -4,7 +4,7 @@ const authServices = require('../services/authServices');
 const { AUTH_COOKIE_NAME } = require('../constants');
 
 router.get('/login', (req, res) => {
-    res.render('auth/login');
+    res.render('auth/login', {title: 'Login Page'});
 });
 
 router.post('/login', async (req, res) => {
@@ -25,7 +25,7 @@ router.post('/login', async (req, res) => {
 })
 
 router.get('/register', (req, res) => {
-    res.render('auth/register');
+    res.render('auth/register', {title: 'Register Page'});
 });
 
 router.post('/register', async (req, res) => {
