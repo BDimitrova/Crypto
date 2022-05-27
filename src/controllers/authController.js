@@ -28,7 +28,7 @@ router.get('/register', (req, res) => {
     res.render('auth/register');
 });
 
-router.post('/register', (req, res) => {
+router.post('/register', async (req, res) => {
     const { username, email, password, confirmPass } = req.body;
 
     if (password !== confirmPass) {
@@ -36,11 +36,17 @@ router.post('/register', (req, res) => {
         return res.render('auth/register')
     }
     try {
-        authServices.register({
+        await authServices.register({
             username,
             email,
             password,
         });
+
+        let token = await authServices.login({
+            email, 
+            password
+        });
+        res.cookie(AUTH_COOKIE_NAME, token);
 
         res.redirect('/');
     } catch (err) {
