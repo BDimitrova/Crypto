@@ -19,17 +19,15 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.pre('save', function (next) {
-    bcrypt.hash(this.password, SALT_ROUNDS, (err, hash) => {
-        if (err) {
-            throw new Error('Cannot hash password');
-        }
+    return bcrypt.hash(this.password, SALT_ROUNDS)
+        .then((hash) => {
+            this.password = hash;
 
-        this.password = hash;
-        next();
-    });
+            return next();
+        });
 });
 
-userSchema.method('validatePassword', function(password) {
+userSchema.method('validatePassword', function (password) {
     return bcrypt.compare(password, this.password);
 });
 
